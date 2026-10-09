@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="form-container">
+    <div class="form-header">
+      <h1>Join Our Platform</h1>
+      <p>Complete Your Profile In Just a few simple steps</p>
+    </div>
+
+    <div class="step-indicator">
+      <div class="step-indicator-progress" id="progressBar"></div>
+      <div class="step step-active" data-step="1">
+        <div class="step-circle"></div>
+        <div class="step-label">Personal info</div>
+      </div>
+      <div class="step" data-step="2">
+        <div class="step-circle"></div>
+        <div class="step-label">Company</div>
+      </div>
+      <div class="step" data-step="3">
+        <div class="step-circle"></div>
+        <div class="step-label">Preferences</div>
+      </div>
+      <div class="step" data-step="4">
+        <div class="step-circle"></div>
+        <div class="step-label">Review</div>
+      </div>
+    </div>
+
+    <form id="multistepForm">
+      <div class="form-step active" data-step="1">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" name="firstName" placeholder="your name" required>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" name="lastName" placeholder="last name" required>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="...@gmail.com" required>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <div class="phone-field">
+              <div class="cselect" id="countrySelect"></div>
+              <input type="tel" id="phoneInput" name="phone" placeholder="7XX XXX XXX" inputmode="numeric" autocomplete="tel-national">
+            </div>
+            <small class="field-hint" id="phoneHint"></small>
+            <input type="hidden" name="phoneFull" id="phoneFull">
+          </div>
+        </div>
+      </div>
+
+        <div class="form-step" data-step="2">
+          <div class="form-group">
+            <label>Company Name</label>
+            <input type="text" name="company" placeholder="Aceme Corporation" required>
+          </div>
+          <div class="form-group">
+            <label>Company Size</label>
+            <select name="companySize" required>
+              <option value="">Select Company Size</option>
+              <option value="1-10">1-10 employees</option>
+              <option value="11-50">11-50 employees</option>
+              <option value="51-200">51-200 employees</option>
+              <option value="201-500">201-500 employees</option>
+              <option value="500+">500+ employees</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Indrustry</label>
+            <select name="indrustry" required>
+              <option value="">Select indrustry</option>
+              <option value="technology">Technology</option>
+              <option value="finance">Finance</option>
+              <option value="healthcare">Healthcare</option>
+              <option value="retail">Retail</option>
+              <option value="edcation">Edcation</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+
+      <div class="form-step" data-step="3">
+        <div class="form-group">
+          <label>Choose Your Plan</label>
+          <div class="radio-group">
+            <div class="radio-option">
+              <input type="radio" name="plan" id="starter" value="starter" required>
+              <label for="starter" class="radio-label">
+                Starter<br>
+                <small style="color:#94a3b8;">$29/mo</small>
+              </label>
+            </div>
+
+            <div class="radio-option">
+              <input type="radio" name="plan" id="professional" value="professional" required>
+              <label for="professional" class="radio-label">
+                Professional<br>
+                <small style="color:#94a3b8;">$79/mo</small>
+              </label>
+            </div>
+
+            <div class="radio-option">
+              <input type="radio" name="plan" id="enterprise" value="enterprise" required>
+              <label for="enterprise" class="radio-label">
+                Enterprise<br>
+                <small style="color:#94a3b8;">Custom</small>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>How did you hear about us?</label>
+          <select name="referral">
+            <option value="">Select an option</option>
+            <option value="search">Search Engine</option>
+            <option value="social"> Social Media</option>
+            <option value="friend">Friend or Colleague</option>
+            <option value="ad">Advertisement</option>
+            <option value="other">other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-step" data-step="4">
+        <div class="form-group">
+          <label>Additional Comments</label>
+          <textarea name="comments" placeholder="Tell us anything else we should know..."></textarea>
+        </div>
+        <div style="background: #f8fafc; padding: 20px; border-radius: 12px; margin-top: 24px;">
+          <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0;">
+            By submitting this form, you agree to our terms of service and privacy policy. we'll your information to set up your account and keep your updated.
+          </p>
+        </div>
+      </div>
+
+      <div class="form-step" data-step="5">
+        <div class="success-message">
+          <div class="success-icon">✔️</div>
+          <h2>You're All set!</h2>
+          <p>Thank You fou joining us. We've sent a confirmation email to your inbox. Our team will reach out</p>
+        </div>
+      </div>
+
+      <div class="form-actions" id="formActions">
+        <button type="button" class="btn btn-secondary" id="prevBtn" style="display:none">Previous</button>
+        <button type="button" class="btn btn-primary" id="nextBtn">Next step</button>
+      </div>
+    </form>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
